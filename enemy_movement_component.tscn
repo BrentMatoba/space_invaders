@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://feel887v43yu"]
+
+[ext_resource type="Script" uid="uid://b1wb6vt665b34" path="res://enemy_movement_component.gd" id="1_tqx64"]
+
+[node name="enemy_movement_component" type="CharacterBody2D"]
+script = ExtResource("1_tqx64")

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://wteao85yokqh"]
+
+[ext_resource type="Texture2D" uid="uid://hd76dxxswbd5" path="res://art/angry-face.jpg" id="1_mbxyh"]
+
+[sub_resource type="GDScript" id="GDScript_mbxyh"]
+script/source = "extends CharacterBody2D
+static var x_direction = 1
+var speed = 10;
+const y_direction = 1;
+var frame_count = 60
+var parent
+
+
+func _ready() -> void:
+	pass;
+func _physics_process(delta: float) -> void:
+	move_right();
+	pass;
+
+
+#i think i just plug this into the enemy class instead of trying to make it a component. I should learn how to make components but
+#i think i actually want to replicate the behavior from the first iterations oft he paddle lol
+#I figured it out, just have to create the static variable in the abstract enemy class, then have all enemies derive from it, BIG
+func move_right():
+	if frame_count < 60:
+		frame_count +=1;
+	else:
+		velocity = Vector2(speed,1);
+		move_and_collide(Vector2(speed, 0));
+		frame_count = 0;
+		
+func move_left():
+	pass;
+func move_down():
+	pass;
+"
+
+[node name="abstract_enemy" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = SubResource("GDScript_mbxyh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_mbxyh")

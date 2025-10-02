@@ -15,6 +15,12 @@ run/main_scene="uid://bgi21s1hlbsy8"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/gdscript/always_track_local_variables=false
+gdscript/size/viewport_height=360
+gdscript/size/viewport_width=640
+
 [display]
 
 window/size/viewport_width=360

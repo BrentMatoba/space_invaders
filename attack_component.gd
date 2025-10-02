@@ -11,5 +11,7 @@ extends Node2D
 #take projectile with those in mind
 #projectile goes off into sunset until on hit collision that I think i link to the collision functionality
 
+#I'm gonna code this later I want to get something ont he screen lol
 func fire(attack_value, direction_up):
+	pass;	
 	
