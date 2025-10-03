@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name abstract_enemy;
 static var x_direction = 1
 var speed = 30;
-const y_speed = 5;
+const y_speed = 10;
 var frame_count = 60
 
 
@@ -14,22 +14,28 @@ func _physics_process(delta: float) -> void:
 	pass;
 
 
-#i think i just plug this into the enemy class instead of trying to make it a component. I should learn how to make components but
+
 #i think i actually want to replicate the behavior from the first iterations oft he paddle lol
+
 func move():
+	#Timer because I want jumpy movement like original game
 	if frame_count < 60:
 		frame_count +=1;
 	else:
-		velocity = Vector2(speed,0);
+		#Checks if any object has gone off screen, then reverses x direction for all enemies
+		await hit_wall_checker(); #Trying to solve the desync issue with await
+		
+		#Moves all enemies 
 		move_and_collide(Vector2(speed * x_direction, 0));
-		hit_wall_checker();
+
+		#resets timer
 		frame_count = 0;
 		
 		
 func hit_wall_checker():
 	#if x value is greater than 360
 	if position.x >= 360:
-		#Change x directionn
+		#Change x direction
 		x_direction = -1;
 		shift_y();
 	elif position.x <= 0:
@@ -37,5 +43,6 @@ func hit_wall_checker():
 		shift_y();
 
 func shift_y():
+	#move enemies down by yspeed units
 	position.y += y_speed;
 	

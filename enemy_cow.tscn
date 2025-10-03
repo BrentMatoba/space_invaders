@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqpk37bfau2t5"]
+[gd_scene load_steps=3 format=3 uid="uid://bqpk37bfau2t5"]
 
 [ext_resource type="Script" uid="uid://dixutrsq6udld" path="res://enemy_cow.gd" id="1_5akyl"]
+[ext_resource type="Texture2D" uid="uid://c2c3frks7n54e" path="res://art/enemy_placeholder_art/COW Background Removed.png" id="2_bin8e"]
 
 [node name="enemy_cow" type="CharacterBody2D"]
 script = ExtResource("1_5akyl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.16872792, 0.24157304)
+texture = ExtResource("2_bin8e")

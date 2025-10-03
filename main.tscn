@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgi21s1hlbsy8"]
+[gd_scene load_steps=5 format=3 uid="uid://bgi21s1hlbsy8"]
 
 [ext_resource type="PackedScene" uid="uid://darjgb3fu5rx" path="res://player.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://wteao85yokqh" path="res://abstract_enemy.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cfk8nbkvuwfhi" path="res://enemy_really_mad.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bqpk37bfau2t5" path="res://enemy_cow.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ounp41y3ueyc" path="res://enemy_chicken.tscn" id="5_272bh"]
 
 [node name="Main" type="Node"]
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(39, 211)
 
-[node name="abstract_enemy" parent="." instance=ExtResource("2_h2yge")]
-up_direction = Vector2(0, 1)
+[node name="enemy_really_mad" parent="." instance=ExtResource("3_lquwl")]
+position = Vector2(119, 42)
+
+[node name="enemy_cow" parent="." instance=ExtResource("4_7mycd")]
+position = Vector2(202, 48)
+
+[node name="enemy_chicken" parent="." instance=ExtResource("5_272bh")]
+position = Vector2(29, 28)
