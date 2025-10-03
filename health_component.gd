@@ -1,9 +1,11 @@
 extends Node2D
 class_name HealthComponent;
 @export var health = 0;
+var max_health : int
 
+func ready(): #called once when the object enters the scene tree
+	var max_health = health;
 
-var max_health = health;
 
 func heal():
 	if health < max_health:

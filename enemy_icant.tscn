@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfk8nbkvuwfhi"]
+
+[ext_resource type="Script" uid="uid://5tju21irmeno" path="res://enemy_icant.gd" id="1_krbdx"]
+
+[node name="enemy_icant" type="CharacterBody2D"]
+script = ExtResource("1_krbdx")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wteao85yokqh"]
+
+[ext_resource type="Texture2D" uid="uid://hd76dxxswbd5" path="res://art/angry-face.jpg" id="1_mbxyh"]
+[ext_resource type="Script" uid="uid://bs0qavsex1xgt" path="res://abstract_enemy.gd" id="1_pjquw"]
+
+[node name="abstract_enemy" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_pjquw")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_mbxyh")
